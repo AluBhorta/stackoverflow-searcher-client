@@ -7,6 +7,7 @@ import { SearchFormComponent } from './components/search-form/search-form.compon
 import { ResultListComponent } from './components/result-list/result-list.component';
 import { ResultItemComponent } from './components/result-item/result-item.component';
 import { HeaderComponent } from './components/layout/header/header.component';
+import {FormsModule} from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { HeaderComponent } from './components/layout/header/header.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
