@@ -6,7 +6,7 @@ export type APISearchRequest = {
 };
 
 export type APISearchResult = {
-  message: string;
+  message?: string;
   quota_daily_limit: number;
   quota_minute_limit: number;
   quota_daily_remain: number;
