@@ -7,7 +7,9 @@ import { SearchFormComponent } from './components/search-form/search-form.compon
 import { ResultListComponent } from './components/result-list/result-list.component';
 import { ResultItemComponent } from './components/result-item/result-item.component';
 import { HeaderComponent } from './components/layout/header/header.component';
-import {FormsModule} from '@angular/forms'
+import {FormsModule} from '@angular/forms';
+import { HomePageComponent } from './components/layout/home-page/home-page.component';
+import { QuestionDetailPageComponent } from './components/layout/question-detail-page/question-detail-page.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import {FormsModule} from '@angular/forms'
     ResultListComponent,
     ResultItemComponent,
     HeaderComponent,
+    HomePageComponent,
+    QuestionDetailPageComponent,
   ],
   imports: [
     BrowserModule,

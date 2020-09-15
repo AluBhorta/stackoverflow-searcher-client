@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./result-list.component.css'],
 })
 export class ResultListComponent implements OnInit {
-  questions = ['lorem', 'lorem', 'lorem', 'lorem', 'lorem'];
+  questions = [];
 
   constructor() {}
 
