@@ -22,3 +22,26 @@ export type QueryParam = {
   fromdate: string | null;
   todate: string | null;
 };
+
+export type PageLessQueryParam = {
+  q: string | null;
+  body: string | null;
+  title: string | null;
+  url: string | null;
+  tagged: string | null;
+  nottagged: string | null;
+  answers: string | null;
+  views: string | null;
+  user: string | null;
+  accepted: string | null;
+  closed: string | null;
+  migrated: string | null;
+  wiki: string | null;
+  notice: string | null;
+  order: string | null;
+  sort: string | null;
+  min: string | null;
+  max: string | null;
+  fromdate: string | null;
+  todate: string | null;
+};

@@ -14,3 +14,10 @@ export type Question = {
   tags: string[];
   owner: ShallowUser;
 };
+
+export type QuestionStreamAction = 'REPLACE' | 'APPEND';
+
+export type QuestionStream = {
+  questions: Question[];
+  action: QuestionStreamAction;
+};
