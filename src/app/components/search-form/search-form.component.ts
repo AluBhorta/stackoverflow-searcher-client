@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { APIClientService } from 'src/app/services/apiclient.service';
-import { QueryParam } from 'src/app/models/QueryParam';
+
+import { PageLessQueryParam } from 'src/app/models/QueryParam';
+import { StateProviderService } from 'src/app/services/state-provider.service';
 
 @Component({
   selector: 'app-search-form',
@@ -17,8 +18,6 @@ export class SearchFormComponent implements OnInit {
   @Input() answers = '';
   @Input() views = '';
   @Input() user = '';
-  @Input() page = '';
-  @Input() pagesize = '';
   @Input() accepted = '';
   @Input() closed = '';
   @Input() migrated = '';
@@ -31,22 +30,18 @@ export class SearchFormComponent implements OnInit {
   @Input() fromdate = '';
   @Input() todate = '';
 
-  constructor(private apiClient: APIClientService) {}
+  constructor(private stateProvider: StateProviderService) {}
 
   ngOnInit(): void {}
 
   onSubmit = () => {
-    this.apiClient
-      .fetchSearchResult(this.generateQueryParam())
-      .then((val) => {
-        console.log(val);
-        // this.clearForm()
-      })
-      .catch((err) => console.error(err));
+    const plqp = this.generatePageLessQueryParam();
+    this.stateProvider.replaceQueryParam(plqp);
+    this.clearForm();
   };
 
-  generateQueryParam = () => {
-    const qp: QueryParam = {
+  generatePageLessQueryParam = () => {
+    const qp: PageLessQueryParam = {
       q: this.q,
       body: this.body,
       title: this.title,
@@ -56,8 +51,6 @@ export class SearchFormComponent implements OnInit {
       answers: this.answers,
       views: this.views,
       user: this.user,
-      page: this.page,
-      pagesize: this.pagesize,
       accepted: this.accepted,
       closed: this.closed,
       migrated: this.migrated,
@@ -83,8 +76,6 @@ export class SearchFormComponent implements OnInit {
     this.answers = '';
     this.views = '';
     this.user = '';
-    this.page = '';
-    this.pagesize = '';
     this.accepted = '';
     this.closed = '';
     this.migrated = '';

@@ -1,5 +1,7 @@
 <h2>result-list</h2>
 
-<div *ngFor="let q of questions">
-  {{ q | json }}
-</div>
+<ul>
+  <li *ngFor="let q of questions">
+    {{ q.title | json }}
+  </li>
+</ul>
