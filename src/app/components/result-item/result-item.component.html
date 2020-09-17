@@ -1,5 +1,8 @@
 <p>
-  <a href="/question/{{ question.question_id }}">
+  <a
+    routerLink="/question/{{ question.question_id }}"
+    routerLinkActive="active"
+  >
     {{ question.title }}
   </a>
 </p>

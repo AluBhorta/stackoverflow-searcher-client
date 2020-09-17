@@ -12,7 +12,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class StateProviderService {
-  private questions: Question[];
+  private questions: Question[] = [];
   private queryParam: QueryParam = {
     q: '',
     body: '',
@@ -66,9 +66,18 @@ export class StateProviderService {
 
   private fetchResultAndUpdateState(action: QuestionStreamAction) {
     this.apiClient.fetchSearchResult(this.queryParam).then((result) => {
-      console.log('result', result)
+      switch (action) {
+        case 'REPLACE':
+          this.questions = result.questions;
+          break;
+        case 'APPEND':
+          this.questions.push(...result.questions);
+          break;
+        default:
+          throw Error('Invalid Action!');
+      }
+
       this.hasMorePages = result.has_more;
-      this.questions = result.questions;
 
       const qs: QuestionStream = {
         questions: result.questions,
@@ -76,5 +85,9 @@ export class StateProviderService {
       };
       this.questionSubject.next(qs);
     });
+  }
+
+  getQuestion(id: string | number): Question | undefined {
+    return this.questions.find((q) => q.question_id === +id);
   }
 }

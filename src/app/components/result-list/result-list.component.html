@@ -1,11 +1,8 @@
 <h2>result-list</h2>
 
-<ul>
-  <li *ngFor="let q of questions">
-    <app-result-item [question]="q" ></app-result-item>
-  </li>
-</ul>
-
+<div>
+  <app-result-item *ngFor="let q of questions" [question]="q"></app-result-item>
+</div>
 
 <div>
   <button type="submit" (click)="loadNextPage()">Load More</button>

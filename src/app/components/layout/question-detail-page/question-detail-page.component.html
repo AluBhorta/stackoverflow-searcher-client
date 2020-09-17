@@ -1,1 +1,11 @@
-<p>question-detail-page works! ID: {{ id }}</p>
+<div *ngIf="question === undefined; then warning; else content"></div>
+
+<ng-template #warning>
+  <h1>Invalid question ID: {{ id }}</h1>
+  <p>No such question found</p>
+</ng-template>
+
+<ng-template #content>
+  <h1>{{ question.title }}</h1>
+  <p>creation_date: {{ question.creation_date }}</p>
+</ng-template>
