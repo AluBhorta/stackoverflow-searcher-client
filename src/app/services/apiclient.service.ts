@@ -6,7 +6,7 @@ import { APISearchResult } from '../models/API';
   providedIn: 'root',
 })
 export class APIClientService {
-  private API_URL = 'http://localhost:8000/search/';
+  private API_URL = 'http://localhost:8000/api/search/';
 
   constructor() {}
 

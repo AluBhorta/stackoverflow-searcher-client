@@ -10,6 +10,7 @@ import { HeaderComponent } from './components/layout/header/header.component';
 import {FormsModule} from '@angular/forms';
 import { HomePageComponent } from './components/layout/home-page/home-page.component';
 import { QuestionDetailPageComponent } from './components/layout/question-detail-page/question-detail-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { QuestionDetailPageComponent } from './components/layout/question-detail
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

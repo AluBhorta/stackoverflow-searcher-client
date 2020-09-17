@@ -28,4 +28,8 @@ export class ResultListComponent implements OnInit {
         }
       });
   }
+
+  loadNextPage(){
+    this.stateProvider.loadNextPage()
+  }
 }

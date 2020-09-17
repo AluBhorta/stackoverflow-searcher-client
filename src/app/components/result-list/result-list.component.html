@@ -2,6 +2,11 @@
 
 <ul>
   <li *ngFor="let q of questions">
-    {{ q.title | json }}
+    <app-result-item [question]="q" ></app-result-item>
   </li>
 </ul>
+
+
+<div>
+  <button type="submit" (click)="loadNextPage()">Load More</button>
+</div>

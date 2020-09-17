@@ -67,7 +67,7 @@ export class StateProviderService {
   private fetchResultAndUpdateState(action: QuestionStreamAction) {
     this.apiClient.fetchSearchResult(this.queryParam).then((result) => {
       console.log('result', result)
-      this.hasMorePages = result.hasMorePages;
+      this.hasMorePages = result.has_more;
       this.questions = result.questions;
 
       const qs: QuestionStream = {

@@ -6,12 +6,11 @@ export type APISearchRequest = {
 };
 
 export type APISearchResult = {
-  quota_daily_limit: number;
-  quota_minute_limit: number;
   quota_daily_remain: number;
   quota_minute_remain: number;
-
   questions: Question[];
   count: number;
-  hasMorePages: boolean;
+  has_more: boolean;
+  is_new: boolean;
+  message?: string;
 };
