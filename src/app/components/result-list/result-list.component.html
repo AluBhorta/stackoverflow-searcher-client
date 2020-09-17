@@ -1,9 +1,26 @@
-<h2>result-list</h2>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h2>Result list</h2>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-selection-list #shoes [multiple]="false">
+      <app-result-item
+        *ngFor="let q of questions"
+        [question]="q"
+      ></app-result-item>
+    </mat-selection-list>
 
-<div>
-  <app-result-item *ngFor="let q of questions" [question]="q"></app-result-item>
-</div>
-
-<div>
-  <button type="submit" (click)="loadNextPage()">Load More</button>
-</div>
+    <div>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        (click)="loadNextPage()"
+      >
+        Load More
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

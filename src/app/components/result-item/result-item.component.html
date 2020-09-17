@@ -1,8 +1,9 @@
-<p>
-  <a
-    routerLink="/question/{{ question.question_id }}"
-    routerLinkActive="active"
-  >
+<mat-list-option
+  [value]="question"
+  routerLink="/question/{{ question.question_id }}"
+  routerLinkActive="active"
+>
+  <div class="result-item">
     {{ question.title }}
-  </a>
-</p>
+  </div>
+</mat-list-option>

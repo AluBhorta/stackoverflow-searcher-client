@@ -2,156 +2,162 @@
   <mat-card-header>
     <mat-card-title>
       <h2>Search Form</h2>
-      <p> Enter the required fields to search </p>
+      <p>Enter the required fields to search</p>
     </mat-card-title>
   </mat-card-header>
-  <mat-grid-list cols="4" rowHeight="2:1">
-    <mat-grid-tile>
-      <mat-form-field appearance="standard">
-        <mat-label>q</mat-label>
-        <input matInput placeholder="Enter q..." [(ngModel)]="q" />
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-form-field appearance="standard">
-        <mat-label>body</mat-label>
-        <input matInput placeholder="Enter body..." [(ngModel)]="body" />
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-form-field appearance="standard">
-        <mat-label>title</mat-label>
-        <input matInput placeholder="Enter title..." [(ngModel)]="title" />
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-form-field appearance="standard">
-        <mat-label>url</mat-label>
-        <input matInput placeholder="Enter url..." [(ngModel)]="url" />
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-form-field appearance="standard">
-        <mat-label>tagged</mat-label>
-        <input matInput placeholder="Enter tagged..." [(ngModel)]="tagged" />
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-form-field appearance="standard">
-        <mat-label>nottagged</mat-label>
-        <input
-          matInput
-          placeholder="Enter nottagged..."
-          [(ngModel)]="nottagged"
-        />
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-form-field appearance="standard">
-        <mat-label>answers</mat-label>
-        <input matInput placeholder="Enter answers..." [(ngModel)]="answers" />
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-form-field appearance="standard">
-        <mat-label>views</mat-label>
-        <input matInput placeholder="Enter views..." [(ngModel)]="views" />
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-form-field appearance="standard">
-        <mat-label>user</mat-label>
-        <input matInput placeholder="Enter user..." [(ngModel)]="user" />
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-form-field appearance="standard">
-        <mat-label>accepted</mat-label>
-        <input
-          matInput
-          placeholder="Enter accepted..."
-          [(ngModel)]="accepted"
-        />
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-form-field appearance="standard">
-        <mat-label>closed</mat-label>
-        <input matInput placeholder="Enter closed..." [(ngModel)]="closed" />
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-form-field appearance="standard">
-        <mat-label>migrated</mat-label>
-        <input
-          matInput
-          placeholder="Enter migrated..."
-          [(ngModel)]="migrated"
-        />
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-form-field appearance="standard">
-        <mat-label>wiki</mat-label>
-        <input matInput placeholder="Enter wiki..." [(ngModel)]="wiki" />
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-form-field appearance="standard">
-        <mat-label>notice</mat-label>
-        <input matInput placeholder="Enter notice..." [(ngModel)]="notice" />
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-form-field appearance="standard">
-        <mat-label>order</mat-label>
-        <input matInput placeholder="Enter order..." [(ngModel)]="order" />
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-form-field appearance="standard">
-        <mat-label>sort</mat-label>
-        <input matInput placeholder="Enter sort..." [(ngModel)]="sort" />
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-form-field appearance="standard">
-        <mat-label>min</mat-label>
-        <input matInput placeholder="Enter min..." [(ngModel)]="min" />
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-form-field appearance="standard">
-        <mat-label>max</mat-label>
-        <input matInput placeholder="Enter max..." [(ngModel)]="max" />
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-form-field appearance="standard">
-        <mat-label>fromdate</mat-label>
-        <input
-          matInput
-          placeholder="Enter fromdate..."
-          [(ngModel)]="fromdate"
-        />
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-form-field appearance="standard">
-        <mat-label>todate</mat-label>
-        <input matInput placeholder="Enter todate..." [(ngModel)]="todate" />
-      </mat-form-field>
-    </mat-grid-tile>
+  <mat-card-content>
+    <mat-grid-list cols="4" rowHeight="2:1">
+      <mat-grid-tile>
+        <mat-form-field appearance="standard">
+          <mat-label>q</mat-label>
+          <input matInput placeholder="Enter q..." [(ngModel)]="q" />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="standard">
+          <mat-label>body</mat-label>
+          <input matInput placeholder="Enter body..." [(ngModel)]="body" />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="standard">
+          <mat-label>title</mat-label>
+          <input matInput placeholder="Enter title..." [(ngModel)]="title" />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="standard">
+          <mat-label>url</mat-label>
+          <input matInput placeholder="Enter url..." [(ngModel)]="url" />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="standard">
+          <mat-label>tagged</mat-label>
+          <input matInput placeholder="Enter tagged..." [(ngModel)]="tagged" />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="standard">
+          <mat-label>nottagged</mat-label>
+          <input
+            matInput
+            placeholder="Enter nottagged..."
+            [(ngModel)]="nottagged"
+          />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="standard">
+          <mat-label>answers</mat-label>
+          <input
+            matInput
+            placeholder="Enter answers..."
+            [(ngModel)]="answers"
+          />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="standard">
+          <mat-label>views</mat-label>
+          <input matInput placeholder="Enter views..." [(ngModel)]="views" />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="standard">
+          <mat-label>user</mat-label>
+          <input matInput placeholder="Enter user..." [(ngModel)]="user" />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="standard">
+          <mat-label>accepted</mat-label>
+          <input
+            matInput
+            placeholder="Enter accepted..."
+            [(ngModel)]="accepted"
+          />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="standard">
+          <mat-label>closed</mat-label>
+          <input matInput placeholder="Enter closed..." [(ngModel)]="closed" />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="standard">
+          <mat-label>migrated</mat-label>
+          <input
+            matInput
+            placeholder="Enter migrated..."
+            [(ngModel)]="migrated"
+          />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="standard">
+          <mat-label>wiki</mat-label>
+          <input matInput placeholder="Enter wiki..." [(ngModel)]="wiki" />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="standard">
+          <mat-label>notice</mat-label>
+          <input matInput placeholder="Enter notice..." [(ngModel)]="notice" />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="standard">
+          <mat-label>order</mat-label>
+          <input matInput placeholder="Enter order..." [(ngModel)]="order" />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="standard">
+          <mat-label>sort</mat-label>
+          <input matInput placeholder="Enter sort..." [(ngModel)]="sort" />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="standard">
+          <mat-label>min</mat-label>
+          <input matInput placeholder="Enter min..." [(ngModel)]="min" />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="standard">
+          <mat-label>max</mat-label>
+          <input matInput placeholder="Enter max..." [(ngModel)]="max" />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="standard">
+          <mat-label>fromdate</mat-label>
+          <input
+            matInput
+            placeholder="Enter fromdate..."
+            [(ngModel)]="fromdate"
+          />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="standard">
+          <mat-label>todate</mat-label>
+          <input matInput placeholder="Enter todate..." [(ngModel)]="todate" />
+        </mat-form-field>
+      </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="4">
-      <button
-        mat-raised-button
-        color="primary"
-        type="submit"
-        (click)="onSubmit()"
-      >
-        Submit
-      </button>
-    </mat-grid-tile>
-  </mat-grid-list>
+      <mat-grid-tile [colspan]="4">
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          (click)="onSubmit()"
+        >
+          Submit
+        </button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card-content>
 </mat-card>
