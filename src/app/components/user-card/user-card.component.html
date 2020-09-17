@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-card-content>
+    <mat-grid-list cols="3" rowHeight="4:1">
+      <mat-grid-tile [colspan]="1" [rowspan]="2">
+        <img src="{{ question.owner.profile_image }}" alt="" />
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2" [rowspan]="1">
+        <h2>Reputation: {{ question.owner.reputation }}</h2>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2" [rowspan]="1">
+        <h3>
+          asked by
+          <a href="{{ question.owner.link }}" target="_blank">{{
+            question.owner.display_name
+          }}</a>
+          @
+          {{ this.question.creation_date }}
+        </h3>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card-content>
+</mat-card>

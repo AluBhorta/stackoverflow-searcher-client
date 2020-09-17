@@ -34,7 +34,7 @@ export class SearchFormComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSubmit = () => {
+  onSearch = () => {
     const plqp = this.generatePageLessQueryParam();
     this.stateProvider.replaceQueryParam(plqp);
     this.clearForm();

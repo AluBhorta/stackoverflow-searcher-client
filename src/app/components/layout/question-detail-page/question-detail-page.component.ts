@@ -10,6 +10,7 @@ import { StateProviderService } from 'src/app/services/state-provider.service';
 })
 export class QuestionDetailPageComponent implements OnInit {
   id: string = '';
+
   question: Question;
 
   constructor(
@@ -19,7 +20,10 @@ export class QuestionDetailPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => (this.id = params['id']));
-
     this.question = this.stateProvider.getQuestion(this.id);
+  }
+
+  getLastActivityDateInUTC() {
+    return new Date(+this.question.last_activity_date * 1000).toUTCString();
   }
 }

@@ -1,0 +1,22 @@
+<mat-grid-list cols="3" rowHeight="2:1">
+  <mat-grid-tile>
+    <mat-grid-tile-header layout-align="center">
+      <h4>Votes</h4>
+    </mat-grid-tile-header>
+    <h1>{{ question.score }}</h1>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-grid-tile-header layout-align="center">
+      <h4>Answers</h4>
+    </mat-grid-tile-header>
+    <h1>{{ question.answer_count }}</h1>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-grid-tile-header layout-align="center">
+      <h4>Views</h4>
+    </mat-grid-tile-header>
+    <h1>
+      {{ question.view_count }}
+    </h1>
+  </mat-grid-tile>
+</mat-grid-list>

@@ -21,6 +21,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { MatChipsModule } from '@angular/material/chips';
+import { QuestionMetricsComponent } from './components/question-metrics/question-metrics.component';
+import { UserCardComponent } from './components/user-card/user-card.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,8 @@ import { MatListModule } from '@angular/material/list';
     HeaderComponent,
     HomePageComponent,
     QuestionDetailPageComponent,
+    QuestionMetricsComponent,
+    UserCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +52,7 @@ import { MatListModule } from '@angular/material/list';
     MatButtonModule,
     MatDividerModule,
     MatListModule,
+    MatChipsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

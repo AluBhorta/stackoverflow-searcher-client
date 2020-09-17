@@ -6,8 +6,8 @@ export type Question = {
   view_count: number;
   answer_count: number;
   score: number;
-  last_activity_date: number;
-  creation_date: number;
+  last_activity_date: number | string;
+  creation_date: number | string;
   content_license: string;
   title: string;
   link: string;

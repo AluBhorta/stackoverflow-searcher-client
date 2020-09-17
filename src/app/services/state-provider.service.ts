@@ -66,6 +66,8 @@ export class StateProviderService {
 
   private fetchResultAndUpdateState(action: QuestionStreamAction) {
     this.apiClient.fetchSearchResult(this.queryParam).then((result) => {
+      result.questions = result.questions.map((q) => this.decodeQuestion(q));
+
       switch (action) {
         case 'REPLACE':
           this.questions = result.questions;
@@ -89,5 +91,24 @@ export class StateProviderService {
 
   getQuestion(id: string | number): Question | undefined {
     return this.questions.find((q) => q.question_id === +id);
+  }
+
+  decodeQuestion(q: Question): Question {
+    return {
+      ...q,
+      title: this._decodeString(q.title),
+      last_activity_date: this._getDateInUTC(q.last_activity_date),
+      creation_date: this._getDateInUTC(q.creation_date),
+    };
+  }
+
+  _decodeString(str: string) {
+    var txt = document.createElement('textarea');
+    txt.innerHTML = str;
+    return txt.value;
+  }
+
+  _getDateInUTC(timestamp: string | number) {
+    return new Date(+timestamp * 1000).toUTCString();
   }
 }
