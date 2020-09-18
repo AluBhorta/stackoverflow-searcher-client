@@ -10,12 +10,17 @@ import { StateProviderService } from 'src/app/services/state-provider.service';
 export class HeaderComponent implements OnInit {
   title = 'stackoverflow searcher';
 
-  dailyQuota = 100;
-  minuteQuota = 5;
+  dailyQuota: number;
+  minuteQuota: number;
 
   constructor(private stateProvider: StateProviderService) {}
 
   ngOnInit(): void {
+    const { dailyQuota, minuteQuota } = this.stateProvider.getQuota();
+
+    this.dailyQuota = dailyQuota;
+    this.minuteQuota = minuteQuota;
+
     this.stateProvider
       .getQuestionStream()
       .subscribe((qStream: QuestionStream) => {

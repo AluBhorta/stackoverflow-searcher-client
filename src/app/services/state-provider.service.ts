@@ -40,8 +40,8 @@ export class StateProviderService {
   };
   private hasMorePages = false;
   private questionSubject = new Subject();
-  private dailyQuota: number;
-  private minuteQuota: number;
+  private dailyQuota: number = 100;
+  private minuteQuota: number = 5;
 
   constructor(private apiClient: APIClientService) {}
 
