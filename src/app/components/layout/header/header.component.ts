@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { QuestionStream } from 'src/app/models/Question';
+import { StateProviderService } from 'src/app/services/state-provider.service';
 
 @Component({
   selector: 'app-header',
@@ -6,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  title = 'stackoverflow-searcher';
+  title = 'stackoverflow searcher';
 
-  constructor() {}
+  dailyQuota = 0;
+  minuteQuota = 0;
 
-  ngOnInit(): void {}
+  constructor(private stateProvider: StateProviderService) {}
+
+  ngOnInit(): void {
+    this.stateProvider
+      .getQuestionStream()
+      .subscribe((qStream: QuestionStream) => {
+        const { dailyQuota, minuteQuota } = qStream;
+        this.dailyQuota = dailyQuota;
+        this.minuteQuota = minuteQuota;
+      });
+  }
 }

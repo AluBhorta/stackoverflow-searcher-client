@@ -20,5 +20,7 @@ export type QuestionStreamAction = 'REPLACE' | 'APPEND';
 export type QuestionStream = {
   questions: Question[];
   action: QuestionStreamAction;
-  hasMorePages: boolean
+  hasMorePages: boolean;
+  dailyQuota: number;
+  minuteQuota: number;
 };

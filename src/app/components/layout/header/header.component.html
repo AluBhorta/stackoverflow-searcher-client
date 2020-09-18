@@ -1,3 +1,22 @@
 <mat-toolbar color="primary">
-  <h1 routerLink="/" class="toolbar-title" >{{ title | uppercase }}</h1>
+  <button
+    routerLink="/"
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>home</mat-icon>
+  </button>
+  <span routerLink="/" class="toolbar-title">{{ title | uppercase }}</span>
+  <span class="example-spacer"></span>
+
+  <div class="text-center">
+    <h2>Daily Quota</h2>
+    <span>{{ dailyQuota }}</span>
+  </div>
+  <div class="quota-space"></div>
+  <div class="text-center">
+    <h2>Minute Quota</h2>
+    <span>{{ minuteQuota }}</span>
+  </div>
 </mat-toolbar>

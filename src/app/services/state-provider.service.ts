@@ -40,6 +40,8 @@ export class StateProviderService {
   };
   private hasMorePages = false;
   private questionSubject = new Subject();
+  private dailyQuota: number;
+  private minuteQuota: number;
 
   constructor(private apiClient: APIClientService) {}
 
@@ -81,11 +83,15 @@ export class StateProviderService {
       }
 
       this.hasMorePages = result.has_more;
+      this.dailyQuota = result.quota_daily_remain;
+      this.minuteQuota = result.quota_minute_remain;
 
       const qs: QuestionStream = {
         questions: result.questions,
         action: action,
         hasMorePages: result.has_more,
+        dailyQuota: result.quota_daily_remain,
+        minuteQuota: result.quota_minute_remain,
       };
       this.questionSubject.next(qs);
     });
@@ -124,5 +130,12 @@ export class StateProviderService {
 
   _getDateInUTC(timestamp: string | number) {
     return new Date(+timestamp * 1000).toUTCString();
+  }
+
+  getQuota() {
+    return {
+      dailyQuota: this.dailyQuota,
+      minuteQuota: this.minuteQuota,
+    };
   }
 }
