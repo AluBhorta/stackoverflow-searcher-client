@@ -7,6 +7,7 @@ import {
 import { PageLessQueryParam, QueryParam } from '../models/QueryParam';
 import { APIClientService } from './apiclient.service';
 import { Subject } from 'rxjs';
+import { title } from 'process';
 
 @Injectable({
   providedIn: 'root',
@@ -54,18 +55,18 @@ export class StateProviderService {
     this.fetchResultAndUpdateState('REPLACE');
   }
 
-  loadNextPage() {
+  async loadNextPage() {
     if (this.hasMorePages) {
       this.queryParam = {
         ...this.queryParam,
         page: (+this.queryParam.page + 1).toString(),
       };
-      this.fetchResultAndUpdateState('APPEND');
+      await this.fetchResultAndUpdateState('APPEND');
     }
   }
 
-  private fetchResultAndUpdateState(action: QuestionStreamAction) {
-    this.apiClient.fetchSearchResult(this.queryParam).then((result) => {
+  private async fetchResultAndUpdateState(action: QuestionStreamAction) {
+    await this.apiClient.fetchSearchResult(this.queryParam).then((result) => {
       result.questions = result.questions.map((q) => this.decodeQuestion(q));
 
       switch (action) {
@@ -84,9 +85,18 @@ export class StateProviderService {
       const qs: QuestionStream = {
         questions: result.questions,
         action: action,
+        hasMorePages: result.has_more,
       };
       this.questionSubject.next(qs);
     });
+  }
+
+  getQuestions(): Question[] {
+    return this.questions;
+  }
+
+  getHasMore() {
+    return this.hasMorePages;
   }
 
   getQuestion(id: string | number): Question | undefined {
@@ -96,6 +106,10 @@ export class StateProviderService {
   decodeQuestion(q: Question): Question {
     return {
       ...q,
+      owner: {
+        ...q.owner,
+        display_name: this._decodeString(q.owner.display_name),
+      },
       title: this._decodeString(q.title),
       last_activity_date: this._getDateInUTC(q.last_activity_date),
       creation_date: this._getDateInUTC(q.creation_date),

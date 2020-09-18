@@ -9,10 +9,14 @@ import { Question, QuestionStream } from 'src/app/models/Question';
 })
 export class ResultListComponent implements OnInit {
   questions: Question[] = [];
+  hasMore = false;
 
   constructor(private stateProvider: StateProviderService) {}
 
   ngOnInit(): void {
+    this.questions = this.stateProvider.getQuestions();
+    this.hasMore = this.stateProvider.getHasMore();
+
     this.stateProvider
       .getQuestionStream()
       .subscribe((questionStream: QuestionStream) => {
@@ -26,10 +30,11 @@ export class ResultListComponent implements OnInit {
           default:
             throw Error('Invalid Action provided');
         }
+        this.hasMore = questionStream.hasMorePages;
       });
   }
 
-  loadNextPage(){
-    this.stateProvider.loadNextPage()
+  async loadNextPage() {
+    await this.stateProvider.loadNextPage();
   }
 }

@@ -11,6 +11,8 @@ import { HeaderComponent } from './components/layout/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePageComponent } from './components/layout/home-page/home-page.component';
 import { QuestionDetailPageComponent } from './components/layout/question-detail-page/question-detail-page.component';
+import { QuestionMetricsComponent } from './components/question-metrics/question-metrics.component';
+import { UserCardComponent } from './components/user-card/user-card.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -22,8 +24,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatChipsModule } from '@angular/material/chips';
-import { QuestionMetricsComponent } from './components/question-metrics/question-metrics.component';
-import { UserCardComponent } from './components/user-card/user-card.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { UserCardComponent } from './components/user-card/user-card.component';
     MatDividerModule,
     MatListModule,
     MatChipsModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent],

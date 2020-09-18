@@ -1,26 +1,46 @@
 <mat-card>
   <mat-card-header>
     <mat-card-title>
-      <h2>Result list</h2>
+      <h2>Questions</h2>
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <mat-selection-list #shoes [multiple]="false">
+    <mat-selection-list [multiple]="false">
       <app-result-item
         *ngFor="let q of questions"
         [question]="q"
       ></app-result-item>
     </mat-selection-list>
 
-    <div>
-      <button
-        mat-raised-button
-        color="primary"
-        type="submit"
-        (click)="loadNextPage()"
-      >
-        Load More
-      </button>
-    </div>
+    <ng-template *ngIf="hasMore; then loadNext"> </ng-template>
+
+    <ng-template #loadNext>
+      <div style="text-align: center">
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          (click)="loadNextPage()"
+        >
+          Load More
+        </button>
+      </div>
+    </ng-template>
+
+    <ng-template *ngIf="questions.length > 0 && !hasMore; then thatsAll">
+    </ng-template>
+
+    <ng-template #thatsAll>
+      <div style="text-align: center">
+        <iframe
+          src="https://giphy.com/embed/lD76yTC5zxZPG"
+          width="480"
+          height="352"
+          frameBorder="0"
+          class="giphy-embed"
+          allowFullScreen
+        ></iframe>
+      </div>
+    </ng-template>
   </mat-card-content>
 </mat-card>
