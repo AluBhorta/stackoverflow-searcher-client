@@ -119,32 +119,72 @@
           <input matInput placeholder="Enter sort..." [(ngModel)]="sort" />
         </mat-form-field>
       </mat-grid-tile>
+
       <mat-grid-tile>
         <mat-form-field appearance="standard">
           <mat-label>min</mat-label>
-          <input matInput placeholder="Enter min..." [(ngModel)]="min" />
+          <input
+            matInput
+            [matDatepicker]="picker"
+            placeholder="Enter min..."
+            [(ngModel)]="min"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
       </mat-grid-tile>
+
       <mat-grid-tile>
         <mat-form-field appearance="standard">
           <mat-label>max</mat-label>
-          <input matInput placeholder="Enter max..." [(ngModel)]="max" />
+          <input
+            matInput
+            [matDatepicker]="picker2"
+            placeholder="Enter max..."
+            [(ngModel)]="max"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker2"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
         </mat-form-field>
       </mat-grid-tile>
+
       <mat-grid-tile>
         <mat-form-field appearance="standard">
           <mat-label>fromdate</mat-label>
           <input
             matInput
+            [matDatepicker]="picker3"
             placeholder="Enter fromdate..."
             [(ngModel)]="fromdate"
           />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker3"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker3></mat-datepicker>
         </mat-form-field>
       </mat-grid-tile>
+
       <mat-grid-tile>
         <mat-form-field appearance="standard">
           <mat-label>todate</mat-label>
-          <input matInput placeholder="Enter todate..." [(ngModel)]="todate" />
+          <input
+            matInput
+            [matDatepicker]="picker4"
+            placeholder="Enter todate..."
+            [(ngModel)]="todate"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker4"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker4></mat-datepicker>
         </mat-form-field>
       </mat-grid-tile>
 

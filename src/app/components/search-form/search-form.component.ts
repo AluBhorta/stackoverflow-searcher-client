@@ -58,10 +58,10 @@ export class SearchFormComponent implements OnInit {
       notice: this.notice,
       order: this.order,
       sort: this.sort,
-      min: this.min,
-      max: this.max,
-      fromdate: this.fromdate,
-      todate: this.todate,
+      min: this.toTimestamp(this.min),
+      max: this.toTimestamp(this.max),
+      fromdate: this.toTimestamp(this.fromdate),
+      todate: this.toTimestamp(this.todate),
     };
     return qp;
   };
@@ -88,4 +88,11 @@ export class SearchFormComponent implements OnInit {
     this.fromdate = '';
     this.todate = '';
   };
+
+  toTimestamp(val: unknown) {
+    if (val) {
+      return (val as Date).getTime().toString();
+    }
+    return '';
+  }
 }

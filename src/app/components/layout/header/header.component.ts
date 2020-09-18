@@ -10,8 +10,8 @@ import { StateProviderService } from 'src/app/services/state-provider.service';
 export class HeaderComponent implements OnInit {
   title = 'stackoverflow searcher';
 
-  dailyQuota = 0;
-  minuteQuota = 0;
+  dailyQuota = 100;
+  minuteQuota = 5;
 
   constructor(private stateProvider: StateProviderService) {}
 
